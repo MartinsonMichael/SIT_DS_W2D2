@@ -35,6 +35,7 @@ dulwich==0.20.21
 dvc==2.0.18
 entrypoints==0.3
 filelock==3.0.12
+Flask==1.1.2
 flatten-dict==0.3.0
 flufl.lock==3.2
 fsspec==0.9.0
@@ -57,6 +58,7 @@ ipykernel==5.5.3
 ipython==7.22.0
 ipython-genutils==0.2.0
 ipywidgets==7.6.3
+itsdangerous==1.1.0
 jedi==0.18.0
 Jinja2==2.11.3
 jinja2-time==0.2.0
@@ -166,6 +168,7 @@ urllib3==1.26.4
 voluptuous==0.12.1
 wcwidth==0.2.5
 webencodings==0.5.1
+Werkzeug==1.0.1
 widgetsnbextension==3.5.1
 xmltodict==0.12.0
 zc.lockfile==2.0
