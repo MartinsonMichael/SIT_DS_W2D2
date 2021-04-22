@@ -1,0 +1,64 @@
+# create cookiecutter project
+cookiecutter https://github.com/drivendata/cookiecutter-data-science
+
+# save current vurtual env into requirements.txt
+pip freeze > requirements.txt
+
+# init git repo inside folder
+git init
+
+# check status
+git status
+# check gitignore
+cat .gitignore
+
+# install dvc
+pip install dvc
+# init dvc
+dvc init
+
+# check dvc status
+dvc status
+
+# commit initial dvc
+git add .
+git commit -m 'init dvc'
+
+# add heavy folders into dvc
+dvc add data/
+dvc add models/
+dvc add reports/figure/
+
+# commit dvc meta files into git
+git add .
+git commit -m 'add data/ and model/ /figures into dvc'
+
+# add remove folder to dvc
+dvc remote add gdrive gdrive://102k_O-x5EjIot14Newq7aLlp8Oa1jqV9
+# push data
+dvc push -r gdrive
+
+# commit dvc changes into git
+git add .
+git commit -m 'add gdrive as a dvc remote storage'
+
+# add remote storage to git
+git remote add origin git@github.com:MartinsonMichael/SIT_DS_W2D2.git
+# push git data into github
+git push origin master
+
+# add execution permission to flask app
+chmod +x flaskApp.py
+
+# launch flask server
+./flaskApp.py
+
+# launch client app
+./client.py
+
+# commit final changes into dvc and git
+dvc add models
+dvc push -r gdrive
+git add .
+git status
+git commit -m 'update notebooks, add regression model, add client for flask tests'

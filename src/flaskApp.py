@@ -6,6 +6,9 @@ import pandas as pd
 import os
 from typing import Dict, Union, Tuple
 
+from flask_ngrok import run_with_ngrok
+
+
 # setup
 BASE_PATH = '..'
 FEATURES = sorted([
@@ -19,6 +22,8 @@ model = joblib.load(os.path.join(BASE_PATH, 'models', 'regression_model'), 'r')
 
 # initiate flask app
 app = flask.Flask(__name__)
+# add ngrok to be able access server from web
+run_with_ngrok(app)
 
 
 def validate_request(json_data: Dict[str, Dict[str, Union[list, float, int]]]) -> Tuple[bool, str]:
@@ -59,6 +64,12 @@ def validate_request(json_data: Dict[str, Dict[str, Union[list, float, int]]]) -
 
 
 def prepare_data(json_data: Dict[str, Dict[str, Union[list, int, float]]]) -> pd.DataFrame:
+    """
+    Helper function to create appropriate data format for ml model
+
+    :param json_data: request data
+    :return: pd.DataFrame with all needed features in right order
+    """
     return pd.DataFrame(
         data={
             feature: [json_data['features'][feature]]

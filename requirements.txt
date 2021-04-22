@@ -36,6 +36,7 @@ dvc==2.0.18
 entrypoints==0.3
 filelock==3.0.12
 Flask==1.1.2
+flask-ngrok==0.0.25
 flatten-dict==0.3.0
 flufl.lock==3.2
 fsspec==0.9.0

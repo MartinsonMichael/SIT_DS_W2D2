@@ -34,4 +34,5 @@ def main() -> None:
 
 
 if __name__ == '__main__':
+    print("Now client is working in 'localhost' mode")
     main()
