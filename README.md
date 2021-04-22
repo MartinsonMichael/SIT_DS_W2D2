@@ -1,4 +1,6 @@
 W2D2_DS
+
+Please also check [SIT_DS_Martinson_W2D2_ml_eng.pdf](/SIT_DS_Martinson_W2D2_ml_eng.pdf).
 ==============================
 
 A short description of the project.
